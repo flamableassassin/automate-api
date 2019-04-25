@@ -4,6 +4,7 @@ console.log("Starting...")
 var express = require('express');
 var app = express();
 var server = app.listen(3000,listening);
+//                      ^^if changed will needed to be changed in flow//
 app.use(express.static('public'));
 //--------------------//
 //required stuff//
