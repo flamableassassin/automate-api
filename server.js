@@ -14,13 +14,13 @@ var path = require('path');
 function listening(){
   console.log("Listening on port: 3000")
   localIpV4Address().then(function(ipAddress){
-    console.log("Ip: " + ipAddress);
+    console.log("Ip: "+ipAddress);
 });
 }
 //text//
 app.get("/text/:num/:text",text)
-
 function text (request,response){
+  console.log(request.ip+" connected!(Notification)")
   var data = request.params;
   var text= data.text
   var number = data.num
@@ -34,4 +34,9 @@ notifier.notify(
     sound: true
   },
 )
+}
+app.get("/ping",ping)
+function ping(request,response){
+  console.log(request.ip+" connected!(Ping)")
+  response.send("pong!")
 }
