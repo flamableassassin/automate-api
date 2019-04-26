@@ -8,7 +8,7 @@ var server = app.listen(3000, listening);
 app.use(express.static('public'));
 //--------------------//
 //required stuff//
-var today = new Date();
+
 var fs = require("fs");
 var localIpV4Address = require("local-ipv4-address");
 var notifier = require('node-notifier/index');
@@ -34,7 +34,7 @@ function listening() {
 app.get("/text/:num/:text", text)
 
 function text(request, response) {
-  console.log(request.ip + " connected!(Notification)")
+  console.log(request.ip + " Connected!(Notification)")
   var data = request.params;
   var text = data.text
   var number = data.num
@@ -47,20 +47,20 @@ function text(request, response) {
     sound: true
   }, )
   //logs
+  var today = new Date();
   var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear()+"-"+today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  fs.appenndFilesync('public/logs.txt', date+"-"+number+"-"+text, 'utf8',write);
-
-
-
+  fs.appendFileSync('public/log.txt', date+"-"+number+"-"+text+"\n", 'utf8',write);
 
 }
 function write(err){
-  console.log("written to settings.txt")
+  console.log("Written to a file")
 }
 //Ping//
 app.get("/ping", ping)
 
 function ping(request, response) {
-  console.log(request.ip + " connected!(Ping)")
+  var today = new Date();
+  var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear()+"-"+today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  fs.appendFileSync('public/log.txt', date+"-"+request.ip+"-Connected!"+"\n", 'utf8',write);
   response.send("pong!")
 }
