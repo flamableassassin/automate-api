@@ -10,4 +10,4 @@ To start the server go to the folder in cmd [click here how to do that](https://
 (I will make a youtube view on how to do this)
 
 
-if you need any help feel free to ask on my discord server: https://discord.gg/wV4uCyN
+if you need any help feel free to ask on my discord server: https://discord.gg/dWrQ9sw
