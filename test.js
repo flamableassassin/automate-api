@@ -1,24 +1,3 @@
-var notifier = require('node-notifier/index');
-  var path = require('path');
-
-  notifier.notify(
-    {
-      message: 'Hello. This is a longer text\nWith "some" newlines.',
-      wait: true,
-      icon: path.join(__dirname, 'coulson.jpg'),
-      sound: true
-    },
-    function(err, data) {
-      // Will also wait until notification is closed.
-      console.log('Waited');
-      console.log(err, data);
-    }
-  );
-
-  notifier.on('timeout', function() {
-    console.log('Timed out!');
-  });
-
-  notifier.on('click', function() {
-    console.log('Clicked!');
-  });
+var today = new Date();
+var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear()+"-"+today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+console.log(date)
