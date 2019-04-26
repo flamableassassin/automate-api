@@ -34,11 +34,10 @@ function listening() {
 app.get("/text/:num/:text", text)
 
 function text(request, response) {
-  console.log(request.ip + " Connected!(Notification)")
   var data = request.params;
   var text = data.text
   var number = data.num
-  response.send("test")
+  response.send("ty")
 
   notifier.notify({
     message: text,
