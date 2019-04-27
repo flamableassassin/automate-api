@@ -42,7 +42,7 @@ function text(request, response) {
 
   notifier.notify({
     message: text,
-    wait: false,
+    wait: true,
     title: "Message From: " + number,
     sound: true
   }, )
