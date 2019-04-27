@@ -11,7 +11,7 @@ app.use(express.static('public'));
 
 var fs = require("fs");
 var localIpV4Address = require("local-ipv4-address");
-var notifier = require('node-notifier/index');
+const notifier = require('node-notifier');
 var path = require('path');
 //-----------------//
 //starting server//
@@ -22,11 +22,12 @@ function listening() {
     fs.writeFile('public/log.txt', "", 'utf8',write);
     fs.writeFile('public/settings.txt', "Ip: "+ipAddress+"\nPort: 3000", 'utf8',write);
     notifier.notify({
-      message: "Port: 3000\nIp: " + ipAddress,
-      wait: false,
-      title: "Server Online",
-      sound: true
-    }, )
+      'title': 'Server started up',
+      'message': "IP: "+ipAddress+"\nPort: 3000",
+      'icon': 'Files/server.png',
+      'sound': 'ding.mp3',
+      'wait': true
+    });
   });
 
 }
@@ -39,13 +40,14 @@ function text(request, response) {
   var text = data.text
   var number = data.num
   response.send("ty")
-
   notifier.notify({
-    message: text,
-    wait: false,
-    title: "Message From: " + number,
-    sound: true
-  }, )
+    'title': 'Server started up\n',
+    'message': "Message From: " + number,
+    'icon': 'Files/message.png',
+    'sound': 'ding.mp3',
+    'wait': true
+  });
+
   //logs
   var today = new Date();
   var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear()+"-"+today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
