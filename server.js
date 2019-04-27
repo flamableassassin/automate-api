@@ -25,7 +25,6 @@ function listening() {
       'title': 'Server started up',
       'message': "IP: "+ipAddress+"\nPort: 3000",
       'icon': 'Files/server.png',
-      'sound': 'ding.mp3',
       'wait': true
     });
   });
@@ -44,7 +43,6 @@ function text(request, response) {
     'title': 'Server started up\n',
     'message': "Message From: " + number,
     'icon': 'Files/message.png',
-    'sound': 'ding.mp3',
     'wait': true
   });
 
