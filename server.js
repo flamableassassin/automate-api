@@ -18,6 +18,7 @@ var path = require('path');
 function listening() {
   localIpV4Address().then(function(ipAddress) {
     //writing ip and port
+    console.log(ipAddress)
     fs.writeFile('public/log.txt', "", 'utf8',write);
     fs.writeFile('public/settings.txt', "Ip: "+ipAddress+"\nPort: 3000", 'utf8',write);
     notifier.notify({
