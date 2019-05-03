@@ -86,4 +86,6 @@ function battery(request,response) {
     'wait': true
   });
 }
+//adding to logs//
+fs.appendFileSync('public/log.txt',"battery level: "+level+"%"+"\n", 'utf8',write);
 }
