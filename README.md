@@ -18,4 +18,4 @@ if you need any help feel free to ask on my discord server: https://discord.gg/d
 
 **Update ideas:**
 1. Include battery notification e.g 'your phone is on 25%' and 'your phone is fully charged!`
-2. Settings for what notification you want.
+2. Settings for what notification you want (can be changed in website?)
