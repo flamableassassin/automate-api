@@ -5,10 +5,9 @@
 2. Sends stright to your windows 10 notifications!
 
 **Required node modules:**
-1. [Node](https://nodejs.org)-`npm install --save node-notifier -g`
-2. [Local-ipv4-address](https://www.npmjs.com/package/local-ipv4-address)`
-3. [Node-notifier](https://www.npmjs.com/package/node-notifier)-`npm install --save local-ipv4-address`
-4. [Express](https://www.npmjs.com/package/express)-`npm install express`
+1. [Local-ipv4-address](https://www.npmjs.com/package/local-ipv4-address)`npm install --save local-ipv4-address
+2. [Node-notifier](https://www.npmjs.com/package/node-notifier)-`npm install --save node-notifier -g`
+3. [Express](https://www.npmjs.com/package/express)-`npm install express`
 
 To start the server go to the folder in cmd [click here how to do that](https://www.youtube.com/watch?v=sjaCgavMO18) then put `node server.js` this should start up the server it should then get a notification with `IP:` copy the number into the flow.
 (I will make a youtube view on how to do this)
