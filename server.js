@@ -40,8 +40,8 @@ function text(request, response) {
   var number = data.num
   response.send("ty")
   notifier.notify({
-    'title': 'Server started up\n',
-    'message': "Message From: " + number,
+    'title': "Message From: " + number,
+    'message': text,
     'icon': 'Files/message.png',
     'wait': true
   });
@@ -60,7 +60,30 @@ app.get("/ping", ping)
 
 function ping(request, response) {
   var today = new Date();
+  response.send("pong!")
   var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear()+"-"+today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
   fs.appendFileSync('public/log.txt', date+"-"+request.ip+"-Connected!"+"\n", 'utf8',write);
-  response.send("pong!")
+}
+//battery//
+app.get("/battery/:level",battery)
+function battery(request,response) {
+  var data =request.params
+  response.send("ty")
+  var level = data.level
+  if (level=="100"){
+    notifier.notify({
+      'title': "Battery Full!",
+      'message': level+"%",
+      'icon': 'Files/fulbat.png',
+      'wait': true
+    });
+  }
+  else;{
+  notifier.notify({
+    'title': "Low Battery!",
+    'message': level+"%",
+    'icon': 'Files/lowbat.png',
+    'wait': true
+  });
+}
 }
