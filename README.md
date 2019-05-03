@@ -5,7 +5,7 @@
 2. Sends stright to your windows 10 notifications!
 
 **Required node modules:**
-1. [Local-ipv4-address](https://www.npmjs.com/package/local-ipv4-address)`npm install --save local-ipv4-address
+1. [Local-ipv4-address](https://www.npmjs.com/package/local-ipv4-address)-`npm install --save local-ipv4-address`
 2. [Node-notifier](https://www.npmjs.com/package/node-notifier)-`npm install --save node-notifier -g`
 3. [Express](https://www.npmjs.com/package/express)-`npm install express`
 
@@ -18,3 +18,5 @@ if you need any help feel free to ask on my discord server: https://discord.gg/d
 **Update ideas:**
 1. Include battery notification e.g 'your phone is on 25%' and 'your phone is fully charged!`
 2. Settings for what notification you want (can be changed in website?)
+
+**Got any ideas feel free to suggest some in my discord servers channel!**
