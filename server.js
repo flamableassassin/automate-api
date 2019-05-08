@@ -8,7 +8,6 @@ var server = app.listen(3000, listening);
 app.use(express.static('public'));
 //--------------------//
 //required stuff//
-
 var fs = require("fs");
 var localIpV4Address = require("local-ipv4-address");
 const notifier = require('node-notifier');
@@ -31,9 +30,11 @@ function listening() {
 
 }
 //-------------------------------------------//
-//text income//
+//app.get stuff//
 app.get("/text/:num/:text", text)
-
+app.get("/battery/:level",battery)
+app.get("/ping", ping)
+//text income//
 function text(request, response) {
   var data = request.params;
   var text = data.text
@@ -52,12 +53,7 @@ function text(request, response) {
   fs.appendFileSync('public/log.txt', date+"-"+number+"-"+text+"\n", 'utf8',write);
 
 }
-function write(err){
-  console.log("Written to a file")
-}
 //Ping//
-app.get("/ping", ping)
-
 function ping(request, response) {
   var today = new Date();
   response.send("pong!")
@@ -65,7 +61,6 @@ function ping(request, response) {
   fs.appendFileSync('public/log.txt', date+"-"+request.ip+"-Connected!"+"\n", 'utf8',write);
 }
 //battery//
-app.get("/battery/:level",battery)
 function battery(request,response) {
   var data =request.params
   response.send("ty")
@@ -89,3 +84,8 @@ function battery(request,response) {
 //adding to logs//
 fs.appendFileSync('public/log.txt',"battery level: "+level+"%"+"\n", 'utf8',write);
 }
+//written to file//
+function write(err){
+  console.log("Written to a file")
+}
+//-------------------------------------//
